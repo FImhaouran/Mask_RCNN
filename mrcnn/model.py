@@ -2453,7 +2453,7 @@ class MaskRCNN():
         ww = wx2 - wx1  # window width
         scale = np.array([wh, ww, wh, ww])
         # Convert boxes to normalized coordinates on the window
-        boxes = np.divide(boxes - shift, scale)
+        boxes = np.true_divide(boxes - shift, scale)
         # Convert boxes to pixel coordinates on the original image
         boxes = utils.denorm_boxes(boxes, original_image_shape[:2])
 
